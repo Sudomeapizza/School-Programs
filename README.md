@@ -1,1 +1,2 @@
-This is a project that I made at school in my computer science class.
+This program does just as it says, has you guess a random number!
+Another simple yet time waster program.
