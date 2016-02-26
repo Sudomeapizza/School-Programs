@@ -1,1 +1,1 @@
-This is a project that I made at school in my computer science class.
+This program simply checks to see if what sentence / word is the same, fowards and backwords. It ignores spaces and commas when you type it in. :D. I'd say it was a quickie.
