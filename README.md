@@ -1,7 +1,5 @@
-This is my home page!!  :D
+This is a project basicaly takes in a list of numbers that you input, and does stuff to those numbers.
 
 NOTE:
 
-All of my java projects that i made at school are used in the terminal / eclipse.
-
-I have done all of my projects from scratch! As in I did not copy and paste code from online, and typed it all myself. I coded them as I went from my teacher telling me what to do, and doin it.
+I did not make this because I could, I made this because it was a project. This project tought me how to manipulate arrays.
