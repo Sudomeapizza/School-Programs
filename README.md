@@ -1,1 +1,1 @@
-42This program just takes in the highest number (the number you input), and generates prime numbers up to that number.
+This program just takes in the highest number (the number you input), and generates prime numbers up to that number.
