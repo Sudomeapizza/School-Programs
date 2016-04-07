@@ -13,76 +13,46 @@ public class PrintSpiral {
 		int row = 0;
 		int i = 1;
 
-		System.out.println(chart.length);
-		System.out.println(chart[0].length);
-		System.out.println(col + " " + row + " " + i);
-
 		int x = input;
 		// x equals how many steps it takes before it changes direction
 
 		while (i < input * input) {
-
-			System.out.println("(" + x + ")");
 			for (int b = 0; b < x; b++){		// This for loop goes right
-				System.out.print("·" + row);
 				chart[row][col] = i;
 				row++;
 				i++;
 			}
-				x--;
-
+			x--;
 			System.out.println();
-
 			row--;
 			col++;
-
-
-
 			if (i != input * input) {
-
-				System.out.println("(" + x + ")");
 				for (int b = 0; b < x; b++){		// This for loop goes down
-					System.out.print("··" + col);
 					chart[row][col] = i;
 					col++;
 					i++;
 				}
-
 				System.out.println();
-
 				col--;
 				row--;
-
-				System.out.println("(" + x + ")");
 				for (int b = 0; b < x; b++){		// This for loop goes left
-					System.out.print("···" + row);
 					chart[row][col] = i;
 					row--;
 					i++;
 				}
-
-					x--;
-
+				x--;
 				System.out.println();
-
 				row++;
 				col--;
 
-				System.out.println("(" + x + ")");
 				for (int b = 0; b < x; b++){		// This for loop goes up
-					System.out.print("····" + col);
 					chart[row][col] = i;
 					col--;
 					i++;
 				}
-
 				row++;
 				col++;
-
 				pause(100);
-
-				System.out.println();
-				System.out.println("|" + i + "|");
 			}
 			if (input % 2 ==1){
 				chart[row][col] = input * input;
