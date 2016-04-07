@@ -1,5 +1,13 @@
-This program prints a spiral of numbers that is appealing to the eye.
+There are many debugging things that happen here.
 
-Don't worry, this program only drove me nutz for a week or two 😤. ARRRRGALALALALALA!!!
+the "·" is the first loop
 
-I thought that this program was t̶h̶e̶ ̶w̶o̶r̶s̶t̶ ̶t̶h̶i̶n̶g̶ ̶t̶h̶a̶t̶ ̶I̶ ̶e̶v̶e̶r̶ ̶d̶i̶d̶ very important becuase it helped me to learn how to use 2d arrays in a spiral.
+the "··" is the second loop
+
+etc.
+
+in the very beginning it tells you the starting col (column), row (row), and the global starting number.
+
+Then it goes through and tells you how many steps it takes for each direction.
+
+finally prints out the entire thing correctly.

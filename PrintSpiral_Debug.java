@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PrintSpiral {
+public class PrintSpiral_Debug {
 	
 	public static void main(String[] args){
 
