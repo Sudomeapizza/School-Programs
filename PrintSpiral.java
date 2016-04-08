@@ -16,46 +16,49 @@ public class PrintSpiral {
 		int x = input;
 		// x equals how many steps it takes before it changes direction
 
-		while (i < input * input) {
-			for (int b = 0; b < x; b++){		// This for loop goes right
-				chart[row][col] = i;
-				row++;
-				i++;
-			}
-			x--;
-			System.out.println();
-			row--;
-			col++;
-			if (i != input * input) {
-				for (int b = 0; b < x; b++){		// This for loop goes down
+		if (input == 0){
+			System.out.println("can't make a spiral with nothing!");
+		} else if (input == 1) {
+			chart[0][0] = 1;
+		} else {
+			while (i < input * input) {
+				for (int b = 0; b < x; b++){		// This for loop goes right
 					chart[row][col] = i;
-					col++;
-					i++;
-				}
-				System.out.println();
-				col--;
-				row--;
-				for (int b = 0; b < x; b++){		// This for loop goes left
-					chart[row][col] = i;
-					row--;
+					row++;
 					i++;
 				}
 				x--;
-				System.out.println();
-				row++;
-				col--;
-
-				for (int b = 0; b < x; b++){		// This for loop goes up
-					chart[row][col] = i;
-					col--;
-					i++;
-				}
-				row++;
+				row--;
 				col++;
-				pause(100);
-			}
-			if (input % 2 ==1){
-				chart[row][col] = input * input;
+				if (i != input * input) {
+					for (int b = 0; b < x; b++){		// This for loop goes down
+						chart[row][col] = i;
+						col++;
+						i++;
+					}
+					col--;
+					row--;
+					for (int b = 0; b < x; b++){		// This for loop goes left
+						chart[row][col] = i;
+						row--;
+						i++;
+					}
+					x--;
+					row++;
+					col--;
+
+					for (int b = 0; b < x; b++){		// This for loop goes up
+						chart[row][col] = i;
+						col--;
+						i++;
+					}
+					row++;
+					col++;
+					pause(100);
+				}
+				if (input % 2 ==1){
+					chart[row][col] = input * input;
+				}
 			}
 		}
 		report(chart,input);
