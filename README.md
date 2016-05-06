@@ -7,9 +7,13 @@ This is a program that I made is the best one yet.
 This program taught me several things.
 
 –– how to print and read from a file.
+
 –– how and when to use try and catch better
+
 –– use multiple classes
+
 –– and many other things
+
 
 You will want to compile (or not) and run the BankProject.java (or class).
 
