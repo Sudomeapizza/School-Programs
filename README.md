@@ -1,17 +1,33 @@
-This is my home page! 
+WWEEEEE!!! I finally finished it!
 
-NOTE:
+It only took me 2 weeks to do, but it was worth it!
 
-All of my java projects that i made at school are used in the terminal / eclipse.
+This is a program that I made is the best one yet. 
 
-I have done all of my projects from scratch! As in I did not copy and paste code from online, and typed it all myself. I coded them as I went from my teacher telling me what to do, and doin it.
+This program taught me several things.
 
-Once I have finished my programs, I will put the .java file instead of the .class file. The reason being is that, I don't want any suggestions on how to fix my code. I want to figure it out on my own.
+–– how to print and read from a file.
+–– how and when to use try and catch better
+–– use multiple classes
+–– and many other things
 
-With almost every file, there is a .class and a .java file. The .class file is if you want to just simply run it, and the .java file is if you want to edit it and what not. 
+You will want to compile (or not) and run the BankProject.java (or class).
+
+All of the files are dependant on each other. SO DON'T DELETE ANY OF THEM :P
+
+BUT if you want to update the files as you go, you will need to delete all of the classes then add the new ones.
+
+Anyways, Now about the program.
+
+1. You are able to make "Bank Accounts"
+
+2. Add or subtract "money" from your account
+
+3. use the account again after you end the session
+
+4. lots of fun (in my opinion :D)
 
 
+Lots more features to come! (*ahem*taxes*cough*)
 
-
-
-42
+and more big fixes. ofc.
