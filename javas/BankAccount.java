@@ -74,7 +74,7 @@ public class BankAccount {
             System.out.println("Now confirm it.");
             String answerthere = scanner.next();
             if (answertwo.equals(answerthere)){
-
+                myPassword = answertwo;
                 System.out.println("Password reset!");
             } else {
                 System.out.println("They don't match!");

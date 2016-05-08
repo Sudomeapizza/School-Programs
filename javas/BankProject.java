@@ -15,10 +15,9 @@ public class BankProject {
                 doDat(file);
             } else {
                 PrintWriter file = new PrintWriter("BankAccounts.txt");
-                System.out.println("File does not exist, creating it.");
+                System.out.println("File does not exist, created it.");
                 doDat(file);
             }
-            
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -57,33 +56,33 @@ public class BankProject {
 
         while(!option.equals("3")) {
             System.out.println("\nWhat do you want to do?");
-            System.out.println("1: add a new account");
-            System.out.println("2: sign into an existing acount");
-            System.out.println("3: quit");
-
+            System.out.println("1: Add a new account");
+            System.out.println("2: Sign into an existing acount");
+            System.out.println("3: Quit");
             option = scanner.next();
-
             System.out.println();
 
             if (option.equals("1") || option.equals("2") || option.equals("3")){
                 if (option.equals("1")) {
-                    addNewAccount(bankOfJava, scanner, file);
+                    addNewAccount(bankOfJava,scanner,file);
                 } else if (option.equals("2")) {
-                    printSignIn(bankOfJava, scanner);
+                    printSignIn(bankOfJava,scanner,file);
                 }
             } else {
                 System.out.println("Bad Input");
             }
+            save(file,bankOfJava);
         }
-        try {
+        System.out.println("Have a nice day!");
+    }
+
+    public static void save(PrintWriter file, Bank bankOfJava){
+		try {
             file = new PrintWriter("BankAccounts.txt");
             bankOfJava.saveAccounts(file);
         } catch (IOException e){
             e.printStackTrace();
         }
-        
-
-        System.out.println("Have a nice day!");
     }
 
     public static void pause(){
@@ -108,31 +107,25 @@ public class BankProject {
         String attempttwo = scanner.next();
 
         if (attemptone.equals(attempttwo)){
-
             if (bank.findAccountBySocial(newssn) == null){
-
                 if (bank.addAccount(new BankAccount(newssn,newname,attempttwo,newmoney)) == true){
                     /**
                     *   Add the info to the file. w/ space ever line to sperate it
                     *   Every next line is a new account!
                     */
-                    //newAccount.print(newssn + " " + newname + " " + attempttwo + " " + newmoney);
-
                     System.out.println("Account added successfuly!");
                 } else {
                     System.out.println("Can't add an account for some random reason! .-.");
                 }
             } else {
-
                 System.out.println("You can't have multiple accounts with the same Social number!");
             }
         } else {
-
             System.out.println("Passwords didn't match!");
         }
     }
 
-    public static void printSignIn(Bank bank, Scanner scanner) {
+    public static void printSignIn(Bank bank, Scanner scanner, PrintWriter file) {
         /*
          1. Ask the user for input: the social.
          2. Look up the BankAccount in bank.
@@ -146,7 +139,7 @@ public class BankProject {
             String wutpassword = scanner.next();
             if (wutssn.equals(account.getSocial())){
                 if (wutpassword.equals(account.getPassword())) {
-                    processAccount(account,scanner);
+                    processAccount(account,scanner, file);
                 }
             } else {
                 System.out.println("Incorrect Password!");
@@ -156,16 +149,16 @@ public class BankProject {
         }
     }
 
-    public static void processAccount(BankAccount account, Scanner scanner) {
-        System.out.println("Hi " + account.getName());
+    public static void processAccount(BankAccount account, Scanner scanner, PrintWriter file) {
+        System.out.println("Hi " + account.getName() + "!");
         System.out.println("Your current balance is " + account.getBalance());
         System.out.println("What would you like to do");
-        System.out.println("1: make a deposit");
-        System.out.println("2: withdraw money");
-        System.out.println("3: change password");
+        System.out.println("1: Make a deposit");
+        System.out.println("2: Withdraw money");
+        System.out.println("3: Change password");
+        System.out.println("4: Sign out");
 
         String option = scanner.next();
-
         System.out.println();
 
         if (Integer.parseInt(option) == 1) {
@@ -174,7 +167,10 @@ public class BankProject {
             processWithdrawal(account, scanner);
         } else if (Integer.parseInt(option) == 3) {
             account.changePassword();
-        } else {
+        } else if (Integer.parseInt(option) == 4){
+        	doDat(file);
+        	System.out.println("Logged out successfully!");
+    	} else {
             System.out.println("Unknown command!");
             processAccount(account,scanner);
         }
@@ -190,7 +186,6 @@ public class BankProject {
         int input = scanner.nextInt();
         account.depositMoney(input);
         System.out.print("Your balance is now " + account.getBalance());
-
     }
 
     public static void processWithdrawal(BankAccount account, Scanner scanner) {
